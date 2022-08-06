@@ -5,200 +5,189 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Predicting GDP per capita for countries using several factors</title>
-        <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.ico')}}" />
+        <title>Grayscale - Start Bootstrap Theme - Cellar Rogues</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+        <link href="{{ url_for('static',filename='/css/styles.css') }}" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-            <div class="container px-4">
-                <a class="navbar-brand" href="#page-top">Country GDP predictor</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">CELLAR ROGUES</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Exploration</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Machine learning</a></li>
-                        <li class="nav-item"><a class = "nav-link" href="#Conclusion">Conclusion</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#mteam">Meet the Team</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Header-->
-        <header class="bg-primary bg-gradient text-white">
-            <div class="container px-4 text-center">
-                <h1 class="fw-bolder">Predicting GDP per capita for countries using several factors</h1>
-                <p class="lead">A data science project by AI Camp students</p>
-                <a class="btn btn-lg btn-light" href="#about">See our work below</a>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">ECONIMATOR <br>E-1000</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">A machine learning based economic modeling </h2>
+                        <a class="btn btn-primary" href="{{ url_for('analysis') }}">Learn More</a>
+                    </div>
+                </div>
             </div>
         </header>
-        <!-- About section-->
-        <section id="about">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2>What does the project do?
-                        </h2>
-                        <p class="lead">In our dataset, there is information on population height, literacy, infant mortality, etc... that correlate with each other in interesting ways. Our goal will be to predict the wealth of nations, which will be measured in GDP per capita. Looking at same characteristics of the dataset, the GDP per capita ranges from $500 to $55,100 and has a standard deviation of $9834</p>
-                    </div>
+                <!-- Featured Project Row-->
+                <header class="bg-primary text-center py-5 mb-4">
+                  <div class="container">
+                    <h1 class="fw-light text-white">Overview</h1>
+                  </div>
+                </header>
+             <div class="text-center">
+              <div class="card border-0 shadow">
+                <div class="card-text text-black-50" style="font-size: 26px">
+We have created a AI product that predicts different economic statistics in a select basket of countries, while providing valuable insights into the interplay of different factors within their economies. It has wide-ranging potential, and while the predictive ability is not always accurate, due to the inherent unpredictability of the economy, it still shows us useful correlations.</div>
                 </div>
-            </div>
-        </section>
-        <!-- Services section-->
-        <section class="bg-light" id="services">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                    <h1 id="top-level-heading">Exploration</h1><br/>
-                    </div>
-                    <div class="col-lg-8">
-                        <h3>Exploration of data: Correlation table heatmap</h3>
-                        <p class="lead">First, we created a correlation table to see how different features correlated with the wealth of nations. Some surprising results were that the number of phones per hundred people and male height in cm were highly correlated with GDP per capita. Meanwhile, birthrate and infant mortality were highly negatively correlated</p>
-                    <iframe width="900" height="900" title="Correlation Table of Features" src="{{url_for('static', filename='all_correlation_map.html')}}"></iframe> <br>
-                    </div>
-                    <div class="col-lg-8">
-                        <h3>Exploration of data: Scatterplots</h3>
-                        <p class="lead">Scatterplots clearly demonstrate to us more positive and negative trends in our data. Most surprising to us is that as agricultural goes to zero, GDP becomes exponentially higher.</p>
-                        <iframe width="700" height="700" title="Scatterplots of features in relation to GDP" src="{{url_for('static', filename='GDP scatterplots.html')}}"></iframe> <br><br>
-                    </div>
-                    <div class="col-lg-8">
-                        <h3>Visualization of crucial features</h3>
-                        <p class="lead">We isolated the above features that we saw as most important and turned them into their own correlation table, so that we can see how these crucial features affect wealth.</p>
-                        <iframe width="800" height="800" title="Crucial Features Hetmap" src="{{url_for('static', filename='crucial_features_heatmap.html')}}"></iframe>  
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Contact section-->
-        <section id="contact">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                        <h1>Machine Learning</h1></br>
-                    </div>
-                    <div class="col-lg-8">
-                        <h2>Linear Regression: Explanation</h2>
-                        <p class="lead">First, we want to try a baseline linear regression. Linear regression assumes that all features are have a linear relation with GDP per capita, and we can fit a line of best fit to predict future values</p>
-                        <img src="{{url_for('static', filename='images/LinearExplanation.png')}}" class="page-image" />
-                    </div>
+               </div>
+              
+                <br>
+                <br>
+                <br>
+                <br>
 
-                    <div class="col-lg-8">
-                        <h2>Linear Regression: Results</h2>
-                        <p class="lead">Here we have a confusion matrix with the results of the linear regression applied on our testing dataset. A confusion matrix for a classification problem tells us the number of correct and incorrect predictions for every class (for example wealthy). For example, the model may have classified 10 countries with average GDP as average and classified 2 countries with average GDP incorrectly, shown in the below confusion matrix. Linear regression performed exceptionally well on countries with average GDP.</p>
-                        <iframe width="500" height="500" title="Linear Regression Confusion Matrix" src="{{url_for('static', filename='LinearRegressionCF.html')}}"></iframe>  
-                        <p class="lead">By calculating the total correct examples over all examples classified, we get an average accuracy of around 58%. Mean absolute error, or the average difference between predicted and actual GDP per capita, was $3299</p>
-                    </div>
-                    <div class="col-lg-8">
-                        <h2>Neural Networks: Explanation</h2>
-                        <p class="lead">Neural networks are one of the most powerful machine learning approaches for data with complicated patterns, but are more prone to overfitting to simple data.</p>
-                        <img src="{{url_for('static', filename='images/nn_explanation.png')}}" class="page-image" width="500"/>
-                    </div>
-
-                    <div class="col-lg-8">
-                        <h2>Neutral Networks: Results</h2>
-                        <p class="lead">Looking at the confusion matrix below, the neural network performed much better on wealthy and very wealthy nations.</p>
-                        <iframe width="500" height="500" title="Neural Network Confusion Matrix" src="{{url_for('static', filename='NeuralNetworkCF_matrix.html')}}"></iframe>
-                        <p class="lead">For total accuracy, the NN performed at 64.4% accuracy in classification. Mean absolute error is $2311</p>
-                    </div>
-                    <div class="col-lg-8">
-                        <h2>K Nearest Neighbors: Explanation</h2>
-                        <p class="lead">K Nearest Neighbors looks at data points in the testing set and infers the classification based on similarity to other points of the same class in the training set.</p>
-                        <img src="{{url_for('static', filename='images/knn_explanation.jpeg')}}" class="page-image" width="500"/>
-                    </div>
-                    <div class="col-lg-8">
-                        <h2>K Nearest Neighbors: Results</h2>
-                        <p class="lead">Looking at our confusion matrix below, K Nearest Neighbors performed well on very wealthy and ver poor nations.</p>
-                        <iframe width="500" height="500" title="KNN Confusion Matrix" src="{{url_for('static', filename='KNN_CF_matrix.html')}}"></iframe>  
-                        <p class="lead">For total accuracy, the NN performed at 64.4% accuracy in classification. Mean absolute error is $2311</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="bg-light" id="Conclusion">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                    <h1 id="top-level-heading">Conclusion</h1><br/>
-                    </div>
-                    <div class="col-lg-8">
-
-                        <p class="lead">In conclusion, neural networks clearly performed the best on our dataset for predicting GDP per capita. Positively correlated features like height and phone usage along with negatively correlated features like birthrate and agriculture helped us achieve these results. </p>
-
-                        <h3>So what?</h3>
-                            
-                        <p class="lead">So what is the significance of our project? Because we know which features are most correlated with a higher GDP country, we can identify both the factors that lead to countries with higher monetary value and also predict and then invest in countries with a high likelihood of future growth. </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section style="margin-left: 80px; margin-right: 80px;" id="team">
+        <!-- Header -->
         <header class="bg-primary text-center py-5 mb-4">
-            <div class="container px-4">
-              <h1 class="fw-light text-white">Meet the Extraordinary AI Camp Team</h1>
-            </div>
-          </header>
-          
-          <!-- Page Content -->
-          <div class="container px-4">
-            <div class="row">
-              <!-- Team Member 1 -->
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-0 shadow">
-                  <img src="{{url_for('static', filename='images/rohan_img.png')}}" class="card-img-top" alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title mb-0">Rohan Joshi</h5>
-                    <div class="card-text text-black-50">Web Developer</div>
-                  </div>
-                </div>
-              </div>
-              <!-- Team Member 2 -->
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-0 shadow">
-                  <img src="{{url_for('static', filename='images/alex_duffy_img.png')}}" height="330" class="card-img-top" alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title mb-0">Alex Duffy</h5>
-                    <div class="card-text text-black-50">Instructor</div>
-                  </div>
-                </div>
-              </div>
-              <!-- Team Member 3 -->
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-0 shadow">
-                  <img src="{{url_for('static', filename='images/mitchell_img.png')}}" height="350" class="card-img-top" alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title mb-0">Mitchell Cutts</h5>
-                    <div class="card-text text-black-50">Instructor</div>
-                  </div>
-                </div>
-              </div>
-              <!-- Team Member 4 -->
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-0 shadow">
-                  <img src="{{url_for('static', filename='images/cameron_jackson_img.jfif')}}" height="250" class="card-img-top" alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title mb-0">Cameron Jackson</h5>
-                    <div class="card-text text-black-50">Data Scientist</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /.row -->
-          
+          <div class="container">
+            <h1 class="fw-light text-white">Meet the Team</h1>
           </div>
+        </header>
+
+        <!-- Meet the Team -->
+        <div class="container" id='mteam'>
+          <div class="row gx-4 gx-lg-5">
+            <!-- Team Member 1 -->
+            <div class="col-md-4 mb-3 mb-md-0">
+              <div class="card border-0 shadow">
+                <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP%0AERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4e%0AHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAEAAQADASIA%0AAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA%0AAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3%0AODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm%0Ap6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA%0AAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx%0ABhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK%0AU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3%0AuLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD6lPLZ%0Apwpvc0/pViAZ706gcilApDE74pOe9L0pRTASjkHFOxRgVIxkkixRtJI21EUljnoAMmvin4h6u3iv%0A4gX+rP8ANDI/lpnosajaP0H86+pfjdrL6F8MNZu4mC3E0X2aHP8Aef5f5bjXxwPtKWmYkLSOynce%0Acg8H/wDXWFRgbGiwfYWuJZohLLHEZPmGBgnChfcA058X1239nqIty58x+uePlBPX0zTtW0s2lnI6%0A3Mku8ok0crEqFGCQDyTz2FGs3tvDafZ9MjMw8kCSNUCszAjgE9OQPm7446VkhmTYN9lvbp7YsV3Z%0AbzG+VQBnA/H09811fh+xnhtrSdw11bXEjNKuOVcZ2nIPGPQjv+FcdbZsbiO4lYnz0IMSHIccDpjg%0A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" class="card-img-top" height="300" width="300" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-0">Alex Palermo</h5>
+                  <div class="card-text text-black-50">Stonk Lover</div>
+                </div>
+              </div>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="col-md-4 mb-3 mb-md-0">
+              <div class="card border-0 shadow">
+                <img src="https://cdn.discordapp.com/emojis/787424929708376115.webp?size=240&quality=lossless" class="card-img-top" height="300" width="300" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-0">Artin Ghafooripour</h5>
+                  <div class="card-text text-black-50">Stonk Lover</div>
+                </div>
+              </div>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="col-md-4 mb-3 mb-md-0">
+              <div class="card border-0 shadow">
+                <img src="https://i.pinimg.com/736x/d8/f1/6a/d8f16acda00b98fb0ecceb3afc9e146b.jpg" class="card-img-top" height="300" width="300" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-0">Caelen Josey</h5>
+                  <div class="card-text text-black-50">Stonk Lover</div>
+                </div>
+              </div>
+            </div>
+          </div><br>
+          
+          <!-- Row 2 -->
+          <div class="row gx-4 gx-lg-5">
+            <!-- Team Member 4 -->
+            <div class="col-md-4 mb-3 mb-md-0">
+              <div class="card border-0 shadow">
+                <img src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.18169-9/1930256_67906585570_8254_n.jpg?stp=cp0_dst-jpg_e15_fr_q65&_nc_cat=104&ccb=1-7&_nc_sid=e007fa&_nc_ohc=2aNcPeu2rToAX8_Ut32&_nc_ht=scontent-sjc3-1.xx&oh=00_AT_aeDCHzssZrIPUnoDW6_pwov4aot3SIqO-6-7l3cNATQ&oe=630C6F54" class="card-img-top" height="300" width="300" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-0">Olivia Sung</h5>
+                  <div class="card-text text-black-50">Stonk Lover</div>
+                </div>
+              </div>
+            </div><br>
+            <!-- Team Member 5 -->
+            <div class="col-md-4 mb-3 mb-md-0">
+              <div class="card border-0 shadow">
+                <img src="https://images.theconversation.com/files/430483/original/file-20211105-9897-18ahqx2.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop" class="card-img-top" height="300" width="300" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-0">Victor Pan</h5>
+                  <div class="card-text text-black-50">Web Developer</div>
+                </div>
+              </div>
+            </div>
+            <!-- Team Member 6 -->
+            <div class="col-md-4 mb-3 mb-md-0">
+              <div class="card border-0 shadow">
+                <img src="https://i.pinimg.com/736x/c8/cf/a3/c8cfa33a2117b8b64023ce57ecbc28da--deadpool-marvel-comics.jpg" class="card-img-top" height="300" width="300" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-0">Caspar Felten</h5>
+                  <div class="card-text text-black-50">Stonkophile</div>
+                </div>
+              </div>
+            </div>
+          </div><br>
+        </div><br>
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <h4 class="text-uppercase m-0">AI Camp</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><a target='_blank' href="https://www.ai-camp.org">Official Website</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">See our Code</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><a target='_blank' href="https://github.com/hghamblin/SC22-BatchC-CellarRogues">GitHub</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">give us your credit card info</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><a target='_blank' href="https://youtu.be/dQw4w9WgXcQ">More about us</a></div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
         </section>
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; AI Camp 2022</p></div>
-        </footer>
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">ALL COPYRIGHTS BELONG TO US AND IF YOU SELL OR STEAL ANY PART OF THIS WEBSITE WE WILL FIND YOU AND SEND A KILLER AI ROBOT TO UNALIVE YOU. Thank you!</div></footer><br>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="/static/js/scripts.js"></script>
+        <script src="{{ url_for('static',filename='js/scripts.js') }}"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
-2>
+
+
+
+
+

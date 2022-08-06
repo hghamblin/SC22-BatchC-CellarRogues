@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>E-1000 Analysis Overview</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static',filename='/css/styles.css') }}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">CELLAR ROGUES</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">About the AI</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#ExploratoryDataAnalysis">Exploratory Data Analysis</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#MachineLearning">Machine Learning</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('interactive') }}">Build Your Own Chart</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+      
+        <!-- Overview -->
+        <header class="bg-primary text-center py-5 mb-4" id='overview'>
+          <div class="container"><br><br>
+            <h1 class="fw-light text-white">Overview</h1>
+          </div>
+        </header>
+        
+        <!-- Projects-->
+        <section class="projects-section bg-light" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="..." /></div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h3>Prediction Model and Use</h3>
+                            <p class="text-black-50 mb-0">The model we have created is able to predict a handful of different facets of an economy via their relation to other recorded data. For example, the model could predict the GDP of a given country using the year or it could predict the GDP using gdp growth, lending rate, unemployment etc. However, it is important to first consider the the correlation to factors might have before trying to predict anything.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project One Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="https://pix4free.org/assets/library/2021-11-18/originals/gdp.jpg" alt="..." /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">What is GDP?</h4>
+                                    <p class="mb-0 text-white-50">GDP is simply the measured market value of all of the products and services a country provides/produces. GDP often correlates strongly with the year in countries that have a stable economic position such as the US. For this reason GDP is one of the more accurate predictions you can make using our model </p>
+                                    <hr class="d-none d-lg-block mb-0 ms-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Two Row-->
+                <div class="row gx-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/777880/0707-A_Python_Introduction-Waldek_Social-06a762a115a34ca506c835b64636f025.png" alt="..." /></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">Structured Through Python</h4>
+                                    <p class="mb-0 text-white-50">Our AI is coded using the coding language Python. Python has a multitude of uses but it is particularly good at machine learning and data analysis, making it a perfect match for our project.</p>
+                                    <hr class="d-none d-lg-block mb-0 me-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+        <!-- Exploratory Data Analysis -->
+        <header class="bg-primary text-center py-5 mb-4" id='ExploratoryDataAnalysis'>
+          <div class="container">
+            <h1 class="fw-light text-white">Exploratory Data Analysis</h1>
+          </div>
+        </header>
+
+        <div class="container">
+          
+          <h3>Total GDP Growth Percent in the World in 2019</h3>
+          <p>You can compare Turkmenistan (TMK) to Somalia (SOM) or even New Caledonia (NCL) to see high contrast in the total GDP growth percent.</p>
+          <div class="text-center">
+          <iframe width="820" height="620" src="{{ url_for('static', filename='/images/globe_chart_interactive_caelen.html') }}"></iframe>
+          </div>
+          <p>This 3-dimensional choropleth world map conveys the total growth of GDP, in each country we have data for, in the year 2019.</p>
+          
+          <br>
+          <br>
+          
+          <h3>Comparisons of Different Economical Factors in New Zealand</h3>
+          <p>As you can see, the Deposit Interest Rate percent and the Unemployment Total percent seem to almost oppose each other perfectly while the Total GDP Inflation percent seems almost unaffected by the both of them and continues to run semi-steadily underneath. This could be because a low Deposit Interest Rate could cause more people to lose their jobs and vice versa and the Total GDP Inflation percent could have a very low correlation between either of them. </p>
+          <div class="text-center">
+          <iframe width="1240" height="620" src="{{ url_for('static', filename='/images/This_awesome_graph_caelen.html') }}"></iframe>
+          </div>
+          
+          <h3>Analysis of Russia and Turkey's deposit interest and inflation</h3>
+          <p>This graph is interesting because we can see the early stages of the soviet collapse begin to take hold of the economy. As the iron curtain fell the inflation fell too as Russia became open to global trade. </p>
+          
+          <img width = "1400" height = "315" src="{{ url_for('static', filename='/images/russia-inflation-deposit.PNG') }}"><br><br>
+          
+          <p>Turkey's deposit interest and inflation becoming more and more correlated over time </p>
+          
+          <img width = "1400" height = "315" src="{{ url_for('static', filename='/images/turkey-deposit-inflation.PNG') }}"><br><br>
+          
+          <h3>Consumer Inflation &amp; Lending Interest Rates in the United States</h3>
+          <p>Using the feature importances generated by our model, we identified lending interest rates to be the greatest predictor of inflation in the United States.  As seen in the chart below, the two variables follow similar patterns and peaks over time - though inflation does not vary as extremely as lending interest</p>
+          
+          <iframe width="1020" height="420" src="{{ url_for('static', filename='/images/usa-graham.html') }}"></iframe><br><br>
+          
+          <h3>Analysis of Lending Interest and Consumer Inflation in Canada</h3>
+          <p>The chart depicts a major spike in the early 1980s, further showing that as the lending interest increased, so did consumer inflation. This was caused by a recession that lasted between the years 1980-1983. Not only did this recession affect Canada, as depicted in the chart, but also countries worldwide. Some of the key events leading to this recession include the 1979 energy crisis and the Iranian Revolution.</p>
+          
+          <iframe width="1020" height="420" src="{{ url_for('static', filename='/images/canada-olivia.html') }}"></iframe><br><br>
+          
+          <h3>Artin's Section</h3>
+          <p>The heatmap below shows correlations between various factors on Sweden. With the exception of inflation and the real interest rate as well as the year on the ILO model of unemployment, every factor correlates moderately or strongly with every other factor. The lack of correlation between the real interest rate and the GDP deflator inflation may be an outlier, as other measures of inflation and other types of interest all correlate well with each other. Of interest is the strong negative correlation between inflation and unemployment, showing that more inflation causes less unemployment and vice versa, and the perfect correlation between the two types of unemployment estimations.
+            
+          </p>
+          <iframe width="820" height="820" src="{{ url_for('static', filename='/html-charts/sweden_heatmap.html') }}"></iframe><br><br>
+          <p>The line chart below shows how the two types of inflation as well as the national estimate of unemployment change over time. The ILO estimate of unemployment has been left out because it lacks a significant amount of data, and the data it does have matches exactly with the national estimate. The points at which the national unemployment estimate cuts off are bits of missing data, but enough data exists to make valid predictions. This chart affirms the heatmap's estimates, showing the negative correlation between inflation and unemployment by visualizing how when inflation is high, unemployment is low and vice versa.
+          </p>
+          <iframe width="1200" height="500" src="{{ url_for('static', filename='/html-charts/sweden_linegraph_prices_deflator_unemployment.html') }}"></iframe><br><br>
+          
+          
+          
+        </div><br>
+      
+        <!-- Machine Learning -->
+        <header class="bg-primary text-center py-5 mb-4" id='MachineLearning'>
+          <div class="container">
+            <h1 class="fw-light text-white">Machine Learning</h1>
+          </div>
+        </header>
+
+        <div class="container">
+          
+          <h3>What is Linear Regression</h3>
+          <p>Linear Regression is a form of supervised machine learning. It predicts the output of continuous data on a consistent slope. the graphs below both are products of our linear regression model.</p>
+          <div class="text-center">
+            <h3>
+              US GDP over time
+            </h3>
+          <img src="{{ url_for('static', filename = 'images/france-ml.png')}}"><br><br>
+            <h3>
+              France's GDP over time
+            </h3>
+          <img src="{{ url_for('static', filename = 'images/usa-ml.png')}}"><br><br>
+          </div>
+          
+          <h3>What is Bagging</h3>
+          <p>Bootstrap aggregation, known as bagging, is an ensemble learning method. In the process of bagging approximately 80% of the data is randomly assigned to separate models, which means a single piece of data can be chosen more than once. These individual models are trained and tested separately and the average of all of these models is the final prediction.</p>
+          <div class="text-center">
+          <img src='https://media.geeksforgeeks.org/wp-content/uploads/20210707140912/Bagging.png'>
+          </div>
+          
+          <h3>Linear Regression vs Bagging</h3>
+          <p>The main difference that sets Linear Regression apart from Bagging, is Linear Regression only uses a single model, which can lead to a larger area of incorrect and less accurate data prediction, while bagging uses a large amount of smaller models and the average of these smaller models tends to be more precise and reduce  the ‘noise’ in the data.</p>
+          
+          <h3>What is XGBoost</h3>
+          <p>XGBoost, which stands for Extreme Gradient Boosting, is a gradient boosted trees algorithm which is a supervised learning algorithm. XGBoost can also be used for both Regression and Classification problems. XgBoost works by creating and training many smaller and weaker models and taking the average of their outputs. XGBoost uses Boosting, Bagging, Gradient Boosting and other algorithm to make the most accurate prediction possible.</p>
+          <div class="text-center">
+          <img src='https://miro.medium.com/max/1400/1*QJZ6W-Pck_W7RlIDwUIN9Q.jpeg'>
+          </div>
+          
+        </div><br>
+      
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">AI Camp</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><a href="https://www.ai-camp.org">Official Website</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">See our Code</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><a href="https://github.com/hghamblin/SC22-BatchC-CellarRogues">GitHub</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">give us your credit card info</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><a href="https://youtu.be/dQw4w9WgXcQ">More about us</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">ALL COPYRIGHTS BELONG TO US AND IF YOU SELL OR STEAL ANY PART OF THIS WEBSITE WE WILL FIND YOU AND SEND A KILLER AI ROBOT TO UNALIVE YOU. Thank you!<br></div></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static',filename='js/scripts.js') }}"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
